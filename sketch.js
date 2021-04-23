@@ -3,7 +3,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-var ball,ground,leftSide,rightSide;
+var ball,groundObj,leftSide,rightSide;
 var world;
 var radius=40;
 
@@ -24,7 +24,7 @@ function setup() {
 	ball = Bodies.circle(200,100,radius/2,ball_options);
 	World.add(world,ball);
 
-	ground=new ground(width/2,670,width,20);
+	groundObj=new ground(width/2,670,width,20);
 	leftSide = new ground(1100,600,20,120);
 	rightSide = new ground(1350,600,20,120);
 
@@ -40,7 +40,7 @@ function draw() {
 
   ellipse(ball.position.x,ball.position.y,radius,radius);
 
-  ground.display();
+  groundObj.display();
   leftSide.display();  
   rightSide.display();
   
