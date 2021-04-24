@@ -5,7 +5,6 @@ const Body = Matter.Body;
 
 var ball,groundObj,leftSide,rightSide;
 var world;
-var radius=40;
 
 function setup() {
 	createCanvas(1600, 700);
@@ -16,12 +15,12 @@ function setup() {
 
 	var ball_options={
 		isStatic:false,
-		restitution:0.5,
-		friction:0.01,
-		density:1.5
+		restitution:0.3,
+		friction:0,
+		density:1.2
 	}
 
-	ball = Bodies.circle(200,100,radius/2,ball_options);
+	ball = Bodies.circle(260,100,radius/2,ball_options);
 	World.add(world,ball);
 
 	groundObj=new ground(width/2,670,width,20);
@@ -49,7 +48,7 @@ function draw() {
 function keyPressed() {
   	if (keyCode === UP_ARROW) {
 
-		Matter.Body.applyForce(ball,{x:0,y:0},{x:85,y:-85});
+		Matter.Body.applyForce(ball,ball.position,{x:85,y:-85});
     
   	}
 }
