@@ -5,6 +5,7 @@ const Body = Matter.Body;
 
 var ball,groundObj,leftSide,rightSide;
 var world;
+var radius = 40;
 
 function setup() {
 	createCanvas(1600, 700);
